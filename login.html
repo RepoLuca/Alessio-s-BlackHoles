@@ -47,10 +47,25 @@
 <body>
   <div class="container">
     <h2>Login</h2>
-    <form action="black_holes.html" method="post">
-      <input type="password" name="password" placeholder="Password" required>
+    <form id="loginForm">
+      <input type="password" id="password" name="password" placeholder="Password" required>
       <input type="submit" value="Login">
     </form>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita l'invio del form
+      var password = document.getElementById("password").value;
+
+      // Esempio di verifica della password
+      if (password === "blackholes") {
+        // Reindirizza a black_holes.html
+        window.location.href = "black_holes.html";
+      } else {
+        alert("Password errata. Riprova.");
+      }
+    });
+  </script>
 </body>
 </html>
